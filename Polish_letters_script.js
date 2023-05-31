@@ -1,5 +1,5 @@
 var fs = require('fs');
-const path = '/home/sam/Downloads/The.Matrix.1999.REMASTERED.1080p.BluRay.x265-RARBG.Polish.Official.srt'
+const path = '<Path of the file to change>'
 var iconv = require('iconv-lite');
 
 try {
@@ -12,6 +12,7 @@ try {
     for(let i = 0; i < data.length; i++){
         let char = data[i];
 
+        
         if (char === '³'){
             char = 'ł';
         } 
@@ -57,5 +58,4 @@ try {
 
 var buffer = iconv.encode(new_file, 'ISO-8859-2');
 
-console.log(new_file);
 fs.writeFileSync(path + '_changed', new_file);
