@@ -1,0 +1,29 @@
+header {
+    background-color:  #ffcf66;
+    font-size: 4vh;
+    margin: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+html, body {
+    background-color: #fff7e6;
+    margin: 0;
+    padding: 0;
+}
+
+.boxUpload {
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
+    height: 10vw;
+    width: 50vh;
+    background-color: #fbb00de2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
