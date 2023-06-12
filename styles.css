@@ -1,3 +1,7 @@
+/* * {
+    border: red solid 4px;
+} */
+
 header {
     background-color:  #ffcf66;
     font-size: 4vh;
@@ -15,41 +19,41 @@ html, body {
     padding: 0;
 }
 
-.allBoxes {
+.text {
+    color: black;
+    max-width: none;
+    font-size: 22px;
+    font-family: 'Geologica', sans-serif;
+    text-align: center;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 10px;
+}
+
+.boxUpload {
+    height: 20vw;
+    min-height: 300px;
+    width: auto;
+    max-height: 60px;
+    background-image: url(images/warsaw.jpg);
+    background-position: bottom;
+    background-size: cover;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.text{
-    max-width: 500px;
-    font-size: 22px;
-    text-align: center;
-    margin: auto;
-    margin-top: 3vh;
-    transform: translate(-50% 0);
-}
-
-.boxUpload {
-    height: 10vw;
-    width: 50vh;
-    margin-top: 20vh;
-    max-height: 60px;
-    background-color: #fbb00de2;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
     
 }
 
 .downloadButton {
-    width: 10vw;
-    height: 4vh;
+    width: 20vw;
+    height: 8vh;
     background-color: rgba(242, 90, 20, 0.693);
     text-align: center;
-    line-height: 4vh;
+    line-height: 8vh;
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
     cursor: pointer;
@@ -65,8 +69,29 @@ html, body {
     background-color: rgba(49, 192, 192, 0.747);
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
-    border: dotted 2px black;
+    border: solid 2px black;
 }
 #uploadButton:hover {
     background-color: rgba(12, 79, 146, 0.901);
+}
+
+.aligned {
+    display: inline;
+    max-width: 80%;
+    margin: auto;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin: 0 5px;
+}
+
+.textInfo {
+    display: inline;
+    font-size: 18px;
 }
