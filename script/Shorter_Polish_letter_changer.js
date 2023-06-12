@@ -1,57 +1,66 @@
-const replacements = {
-  '³': 'ł',
-  '': 'ś',
-  '¹': 'ą',
-  'æ': 'ć',
-  '': 'ź',
-  'š': 'ą',
-  '¿': 'ż',
-  'ê': 'ę',
-  'ñ': 'ń',
-  '': 'Ś',
-};
-
-try {
-  const buffer = fs.readFileSync(path);
-  const data = iconv.decode(buffer, 'ISO-8859-2');
-
-  
-
-  var new_file = data.split('').map(char => replacements[char] || char).join('');
-  var buffer2 = iconv.encode(new_file, 'ISO-8859-2');
-
-} catch(err) {
-  console.error('unable to read the file', err);
-}
-
-fs.writeFileSync(path + '_changed', new_file);
-
-
-document.getElementById('uploadButton').addEventListener('click', function() {
-  var fileUploaded = document.getElementById('myFile');
-  var file = fileUploaded.files[0];
-
-  // Make so that if the file isn't a correct file, it sends an error
-
-  if (!file) {
-    alert('No file selected');
-    return;
+document.addEventListener('DOMContentLoaded', function() {
+  const replacements = {
+    '³': 'ł',
+    '': 'ś',
+    '¹': 'ą',
+    'æ': 'ć',
+    '': 'ź',
+    'š': 'ą',
+    '¿': 'ż',
+    'ê': 'ę',
+    'ñ': 'ń',
+    '': 'Ś',
   };
 
-  var reader = new FileReader();
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var fileUploaded = document.getElementById('myFile');
+    var file = fileUploaded.files[0];
 
-  reader.onload = function(e) {
-    var res = e.target.result;
+    // Make so that if the file isn't a correct file, it sends an error
 
-    function changesFunction() {
-      var changedResult = res.split('').map((char) => replacement[char] || char).join('');
+    if (!file) {
+      alert('No file selected');
+      return;
     };
 
-    var encoder = new TextEncoder('UTF-8');
-    var encodedText = encoder.encode(changedResult);
+    var reader = new FileReader();
 
+    reader.onload = function(e) {
+      var res = e.target.result;
+
+      var changedResult = (function() {
+        return res.split('').map((char) => replacements[char] || char).join('');
+      })();
+
+      var blob = new Blob ([changedResult], {type: "text/plain;charset=utf-8"});
+      var downloadButton = document.querySelector('.downloadButton');
+      
+      downloadButton.style.display = "block";
+
+      downloadButton.addEventListener('click', function() {
+        var dl = document.createElement("a");
+        dl.href = URL.createObjectURL(blob);
+        dl.download = "newFile.txt";
     
-  }
+        document.body.appendChild(dl);
+        dl.click();
+        document.body.removeChild(dl);
+
+        downloadButton.style.display = "none";
+      });
+    };
+
+    reader.onerror = function() {
+      console.log(reader.error);
+    };
+
+    reader.readAsText(file, 'ISO-8859-2');
 
 
-});
+
+  });
+})
+  
+
+  
