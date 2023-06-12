@@ -1,5 +1,5 @@
 var fs = require('fs');
-const path = '<Path of the file to change>'
+const path = '/home/sam/Documents/subtitles/kirikou_pl.txt'
 var iconv = require('iconv-lite');
 
 try {

@@ -15,15 +15,43 @@ html, body {
     padding: 0;
 }
 
+.allBoxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .boxUpload {
-    position: absolute;
-    top: 30vh;
-    left: 30vw;
     height: 10vw;
     width: 50vh;
+    margin-top: 20vh;
+    max-height: 60px;
     background-color: #fbb00de2;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.downloadButton {
+    width: 10vw;
+    height: 4vh;
+    background-color: rgba(242, 90, 20, 0.693);
+    text-align: center;
+    line-height: 4vh;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    display: none;
+}
+
+.downloadButton:hover {
+    background-color: rgba(20, 124, 124, 0.747);
+}
+
+#uploadButton {
+    height: 5vh;
+    background-color: rgba(49, 192, 192, 0.747);
+    border-radius: 5px;
 }

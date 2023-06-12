@@ -9,11 +9,15 @@
 </head>
 <body>
     <header><em>Welcome to the Polish letter changer page</em></header>
-    <div class="boxUpload">
-        <form action="submit/" method="post" enctype="multipart/form-data">
-            <input type="file" name="filename" id="myFile">
-            <input type="submit" value="Upload File" name="submit">
-        </form>
+    <div class="allBoxes">
+        <div class="boxUpload">
+            <form action="submit/" method="post" enctype="multipart/form-data">
+                <input type="file" name="filename" id="myFile">
+                <input type="submit" id="uploadButton" value="Upload File" name="submit">
+            </form>
+        </div>
+        <div class="downloadButton">Download</div>
     </div>
+    
 </body>
 </html>
