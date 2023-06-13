@@ -45,6 +45,7 @@ html, body {
     justify-content: center;
     align-items: center;
     color: white;
+    margin-bottom: 5vh;
     
 }
 
@@ -76,22 +77,25 @@ html, body {
 }
 
 .aligned {
-    display: inline;
-    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
     margin: auto;
 }
 
 .arrow {
+    width: 0.5px;
     border: solid black;
     border-width: 0 4px 4px 0;
-    display: inline-block;
+    display: block;
     padding: 3px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin: 0 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin: 0 5px 10px;
 }
 
 .textInfo {
-    display: inline;
-    font-size: 18px;
+    margin-bottom: 10px;
 }

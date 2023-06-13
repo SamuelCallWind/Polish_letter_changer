@@ -12,22 +12,20 @@
         
         <p class="text">This small program is designed to change the incorrectly encoded Polish letters in ISO 8859-2 and ISO 8859-1, ensuring their proper display in a text file. It generates a new file that rectifies these encoding errors</p>
         
-        <div class="allBoxes">
-            <div class="boxUpload">
-                <form method="post" enctype="multipart/form-data">
-                    <input type="file" name="filename" id="myFile">
-                    <input type="submit" id="uploadButton" value="Upload File" name="submit">
-                </form>
-                <div class="downloadButton">Download</div>
-            </div>
+        <div class="boxUpload">
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="filename" id="myFile">
+                <input type="submit" id="uploadButton" value="Upload File" name="submit">
+            </form>
+            <div class="downloadButton">Download</div>
         </div>
-        <p class="aligned">
-            <span class="textInfo">choose a file</span>
+        <div class="aligned">
+            <span class="textInfo">Choose a file</span>
             <div class="arrow"></div>
             <span class="textInfo">Once the file is selected, click on "Upload file"</span>
             <div class="arrow"></div>
             <span class="textInfo">Click on "Download" to get your file changed</span>
-        </p>
+        </div>
         <script src="script/Shorter_Polish_letter_changer.js"></script>
     
     </body>
