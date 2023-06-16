@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     'ê': 'ę',
     'ñ': 'ń',
     '': 'Ś',
+    '': 'Ź',
+    'Ľ': 'Ą'
   };
 
   document.querySelector('form').addEventListener('submit', function(event) {
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var fileUploaded = document.getElementById('myFile');
     var file = fileUploaded.files[0];
 
-    // Make so that if the file isn't a correct file, it sends an error
+    // Make so that if there is not file it sends an error
 
     if (!file) {
       alert('No file selected');
