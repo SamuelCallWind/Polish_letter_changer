@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       downloadButton.addEventListener('click', function() {
         var dl = document.createElement("a");
         dl.href = URL.createObjectURL(blob);
-        dl.download = "newFile.txt";
+        dl.download = file.name.split('.').slice(0, -1).join('') + '_changed'
     
         document.body.appendChild(dl);
         dl.click();
